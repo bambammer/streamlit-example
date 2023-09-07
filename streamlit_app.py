@@ -4,7 +4,7 @@ import streamlit as st
 conn = st.experimental_connection('snowpark')
 
 # Perform query.
-df = conn.query('SELECT * from CUSTOMER_PHONE_CLEANSED;', ttl=600)
+df = conn.query('SELECT * from IRP_DB.PUBLIC.CUSTOMER_PHONE_CLEANSED;', ttl=600)
 
 # Print results.
 for row in df.itertuples():
