@@ -1,9 +1,23 @@
+import streamlit as st
+
+# Initialize connection.
+conn = st.experimental_connection('snowpark')
+
+# Perform query.
+df = conn.query('SELECT * from CUSTOMER_PHONE_CLEANSED;', ttl=600)
+
+# Print results.
+for row in df.itertuples():
+    st.write(f"{row.ROW_ID} has a :{row.CLEANSED_BILLING_PHONE}:")
+
+
+"""
 from collections import namedtuple
 import altair as alt
 import math
 import pandas as pd
 import streamlit as st
-
+"""
 """
 # Welcome to Streamlit!
 
@@ -15,7 +29,7 @@ forums](https://discuss.streamlit.io).
 In the meantime, below is an example of what you can do with just a few lines of code:
 """
 
-
+"""
 with st.echo(code_location='below'):
     total_points = st.slider("Number of points in spiral", 1, 5000, 2000)
     num_turns = st.slider("Number of turns in spiral", 1, 100, 9)
@@ -36,3 +50,4 @@ with st.echo(code_location='below'):
     st.altair_chart(alt.Chart(pd.DataFrame(data), height=500, width=500)
         .mark_circle(color='#0068c9', opacity=0.5)
         .encode(x='x:Q', y='y:Q'))
+"""
