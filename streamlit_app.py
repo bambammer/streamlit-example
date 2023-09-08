@@ -1,4 +1,4 @@
-pip install "snowflake-snowpark-python[pandas]"
+#pip install "snowflake-snowpark-python[pandas]"
 import streamlit as st
 
 # Initialize connection.
