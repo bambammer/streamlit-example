@@ -2,7 +2,7 @@
 import streamlit as st
 
 # Initialize connection.
-conn = st.experimental_connection('snowpark')
+snowflake_uri = "snowflake://<username>:<password>@<org-account>/<database_name>/<schema_name>?warehouse=<warehouse_name>&role=<role_name>"
 
 # Perform query.
 df = conn.query('SELECT * from IRP_DB.PUBLIC.CUSTOMER_PHONE_CLEANSED;', ttl=600)
