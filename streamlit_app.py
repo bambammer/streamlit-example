@@ -9,7 +9,7 @@ df = conn.query('SELECT * from IRP_DB.PUBLIC.CUSTOMER_PHONE_CLEANSED;', ttl=600)
 
 # Print results.
 for row in df.itertuples():
-    st.write(f"{row.ROW_ID} has a :{row.CLEANSED_BILLING_PHONE}:")
+    st.write(f"{row.ROW_ID} has a :{row.CLEANSED_SHIPPING_PHONE}:")
 
 
 """
