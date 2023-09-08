@@ -5,7 +5,7 @@ import streamlit as st
 snowflake_uri = "snowflake://<username>:<password>@<org-account>/<database_name>/<schema_name>?warehouse=<warehouse_name>&role=<role_name>"
 
 # Perform query.
-df = conn.query('SELECT * from IRP_DB.PUBLIC.CUSTOMER_PHONE_CLEANSED;', ttl=600)
+df = query('SELECT * from IRP_DB.PUBLIC.CUSTOMER_PHONE_CLEANSED;', ttl=600)
 
 # Print results.
 for row in df.itertuples():
